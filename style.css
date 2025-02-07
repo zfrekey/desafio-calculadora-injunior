@@ -35,9 +35,10 @@ textarea {
 }
 
 main h1 {
+    display: flex;
     color: white;
     font-size: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .container {
@@ -53,15 +54,20 @@ main h1 {
     width: 80%;
 }
 
+
 .entrada__notas {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
     margin-bottom: 1rem;
     gap: 0.5rem;
+    font-size: 1.1rem
 }
 
-.entrada__notas input{
+
+.entrada__notas input, textarea{
     width:100%;
+    padding-left: 0.2rem;
 }
 
 .notas__inseridas {
@@ -81,5 +87,15 @@ main h1 {
 .container p{
     display: flex;
     justify-content: flex-start;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .notas__inseridas button{
+        display: flex;
+        align-self: center;
+        width: 50%;
+        justify-content: center;
+    }
 }
 

@@ -22,3 +22,17 @@ function calcularMedia() {
 
     document.getElementById('mediaResultado').textContent = media.toFixed(2);
 }
+
+function limparTextarea() {
+    if (mediaCalculada) {
+        document.getElementById('listaNotas').value = '';
+        document.getElementById('mediaResultado').textContent = '';
+        notas = []; 
+    }
+}
+
+document.getElementById('nota').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        adicionarNota();
+    }
+});
