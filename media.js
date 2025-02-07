@@ -6,7 +6,8 @@ function adicionarNota() {
 
     if(!isNaN(nota)) {
         notas.push(nota);
-        document.getElementById('listaNotas').value = notas.join('\n');
+        let listaNotas = notas.map((nota, index) => `A nota ${index + 1} foi ${nota}`).join('\n');
+        document.getElementById('listaNotas').value = listaNotas;
         notaInput.value = '';
     }
 }
@@ -21,14 +22,6 @@ function calcularMedia() {
     let media = soma / notas.length;
 
     document.getElementById('mediaResultado').textContent = media.toFixed(2);
-}
-
-function limparTextarea() {
-    if (mediaCalculada) {
-        document.getElementById('listaNotas').value = '';
-        document.getElementById('mediaResultado').textContent = '';
-        notas = []; 
-    }
 }
 
 document.getElementById('nota').addEventListener('keypress', function(event) {
